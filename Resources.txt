@@ -13,4 +13,6 @@ Check list for things to consider/ add
 - Silverstone (do another track if you have time)
 - Look at racing line in comparison to the track (not needed but recommended)
 
+how to create a race track visual that scrolls
+
 If you want to install more packages do 'python -m pip install _____' 
