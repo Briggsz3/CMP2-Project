@@ -10,3 +10,7 @@ Check list for things to consider/ add
 - track
 - grass or gravel/ off the track (will slow down cars)
 - track limits violations
+- Silverstone (do another track if you have time)
+- Look at racing line in comparison to the track (not needed but recommended)
+
+If you want to install more packages do 'python -m pip install _____' 
