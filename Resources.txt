@@ -1,1 +1,12 @@
 These are my resources
+
+Check list for things to consider/ add
+- acceleration/ braking
+- onboard f1
+- racing line w/ brake lines
+- time recorder
+- high score screen
+- walls 
+- track
+- grass or gravel/ off the track (will slow down cars)
+- track limits violations
