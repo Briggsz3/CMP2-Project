@@ -2,7 +2,7 @@ These are my resources
 
 Check list for things to consider/ add
 - acceleration/ braking
-- onboard f1
+- onboard view or maybe top down to make it more simple f1
 - racing line w/ brake lines
 - time recorder
 - high score screen
