@@ -8,7 +8,6 @@ pygame.display.set_icon(f1_logo)
 pygame.init()
 
 # Set up the game window
-screen = pygame.display.set_mode((1000, 750))
 pygame.display.set_caption("Silverstone hotlap") # geeksforgeeks (7-24)
 
 
@@ -17,8 +16,9 @@ f1_car = pygame.image.load("./images/racing-car.png")
 car_x = 500
 car_y = 375
 
-def car():
-    screen.blit(f1_car,(car_x, car_y))
+
+
+
 
 # create the display surface object
 # of specific dimension.
@@ -33,7 +33,14 @@ pygame.draw.rect(window, (0,   0, 200), # color
                 [50, 300, 75, 50], 10) # position, position, size, size
 
 
+
+def car():
+    window.blit(f1_car,(car_x, car_y))
+
+car()
+
 # Draws the surface object to the screen.
+
 pygame.display.update()
 
 # Game loop
