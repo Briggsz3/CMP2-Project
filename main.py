@@ -51,6 +51,29 @@ while running:
         if event.type == pygame.QUIT:
             running = False
 
+  vel = 10
+run = True
+
+# infinite loop 
+	pygame.time.delay(10) 
+	
+	for event in pygame.event.get(): 
+		if event.type == pygame.QUIT: 
+			run = False
+	keys = pygame.key.get_pressed() 
+	
+	if keys[pygame.K_LEFT] and x>0: 
+		x -= vel 
+		
+	if keys[pygame.K_RIGHT] and x<500-width: 
+		x += vel 
+		
+	if keys[pygame.K_UP] and y>0: 
+		y -= vel 
+		
+	if keys[pygame.K_DOWN] and y<500-height: 
+		y += vel 
+
 
 # Quit Pygame
 pygame.quit()
