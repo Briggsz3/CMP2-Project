@@ -1,5 +1,4 @@
 import pygame
-from pygame.locals import *
 
 f1_logo = pygame.image.load("./images/f1.256px.png")  # from Code with prince, YT video
 pygame.display.set_icon(f1_logo)
@@ -44,17 +43,14 @@ car()
 pygame.display.update()
 
 # Game loop
+width = 20
+height = 20
 running = True
-while running:
-    
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            running = False
-
-  vel = 10
+vel = 10
 run = True
 
 # infinite loop 
+while run: 
 	pygame.time.delay(10) 
 	
 	for event in pygame.event.get(): 
@@ -73,7 +69,6 @@ run = True
 		
 	if keys[pygame.K_DOWN] and y<500-height: 
 		y += vel 
-
 
 # Quit Pygame
 pygame.quit()
