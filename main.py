@@ -1,4 +1,5 @@
 import pygame
+from pygame.locals import *
 
 f1_logo = pygame.image.load("./images/f1.256px.png")  # from Code with prince, YT video
 pygame.display.set_icon(f1_logo)
@@ -47,15 +48,15 @@ width = 20
 height = 20
 running = True
 vel = 10
-run = True
+
 
 # infinite loop 
-while run: 
+while running: 
 	pygame.time.delay(10) 
 	
 	for event in pygame.event.get(): 
 		if event.type == pygame.QUIT: 
-			run = False
+			running = False
 	keys = pygame.key.get_pressed() 
 	
 	if keys[pygame.K_LEFT] and x>0: 
