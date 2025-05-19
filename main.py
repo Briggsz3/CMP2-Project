@@ -46,6 +46,7 @@ height = 20
 running = True
 vel = 10
 change_x_pos = 0
+angle = 0
 
 # infinite loop 
 while running: 
@@ -53,20 +54,29 @@ while running:
 		if game_event.type == pygame.QUIT:
 			running = False
 		
-		if game_event.type == pygame.KEYDOWN:
-			if game_event.key == pygame.K_ESCAPE:
-				running = False
-
-			if game_event.key == pygame.K_DOWN:
-				change_x_pos = -0.7
-
-			if game_event.key == pygame.K_UP:
-				change_x_pos == 0.7
+		pygame.time.delay(10) 
+	
+	for event in pygame.event.get(): 
+		if event.type == pygame.QUIT: 
+			running = False
+	keys = pygame.key.get_pressed() 
+	
+	if keys[pygame.K_LEFT]: 
+		angle+=6
+		f1_car = pygame.transform.rotate(f1_car, angle)
 		
-		# check for keystroke release
-		if game_event == pygame.KEYUP:
-			if game_event.key == pygame.K_LEFT or game_event.key == pygame.K_RIGHT:
-				change_x_pos = 0
+	if keys[pygame.K_RIGHT]: 
+		angle-=6
+		f1_car = pygame.transform.rotate(f1_car, angle)
+		
+	if keys[pygame.K_UP] and car_y>0: 
+		car_y -= vel/10
+		
+	if keys[pygame.K_DOWN] and car_y<750-height: 
+		car_y += vel/10
+	window.blit(f1_car,(car_x, car_y))
+	pygame.display.flip()
+	pygame.display.update()
 
 		
 
@@ -74,23 +84,3 @@ while running:
 pygame.quit()
 
     
-# pygame.time.delay(10) 
-	
-	#for event in pygame.event.get(): 
-	#	if event.type == pygame.QUIT: 
-	#		running = False
-	#keys = pygame.key.get_pressed() 
-	
-	#if keys[pygame.K_LEFT] and car_x>0: 
-	#	car_x -= vel 
-		
-	#if keys[pygame.K_RIGHT] and car_x<1500-width: 
-	#	car_x += vel 
-		
-	#if keys[pygame.K_UP] and car_y>0: 
-	#	car_y -= vel 
-		
-	#if keys[pygame.K_DOWN] and car_y<750-height: 
-	#	car_y += vel 
-	#window.blit(f1_car,(car_x, car_y))
-	#pygame.display.flip()
