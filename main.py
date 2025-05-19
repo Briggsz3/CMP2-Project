@@ -34,10 +34,7 @@ pygame.draw.rect(window, (0,   0, 200), # color
 
 
 
-def car():
-    window.blit(f1_car,(car_x, car_y))
 
-car()
 
 # Draws the surface object to the screen.
 
@@ -48,30 +45,52 @@ width = 20
 height = 20
 running = True
 vel = 10
-
+change_x_pos = 0
 
 # infinite loop 
 while running: 
-	pygame.time.delay(10) 
-	
-	for event in pygame.event.get(): 
-		if event.type == pygame.QUIT: 
+	for game_event in pygame.event.get():
+		if game_event.type == pygame.QUIT:
 			running = False
-	keys = pygame.key.get_pressed() 
-	
-	if keys[pygame.K_LEFT] and x>0: 
-		x -= vel 
 		
-	if keys[pygame.K_RIGHT] and x<500-width: 
-		x += vel 
+		if game_event.type == pygame.KEYDOWN:
+			if game_event.key == pygame.K_ESCAPE:
+				running = False
+
+			if game_event.key == pygame.K_DOWN:
+				change_x_pos = -0.7
+
+			if game_event.key == pygame.K_UP:
+				change_x_pos == 0.7
 		
-	if keys[pygame.K_UP] and y>0: 
-		y -= vel 
+		# check for keystroke release
+		if game_event == pygame.KEYUP:
+			if game_event.key == pygame.K_LEFT or game_event.key == pygame.K_RIGHT:
+				change_x_pos = 0
+
 		
-	if keys[pygame.K_DOWN] and y<500-height: 
-		y += vel 
 
 # Quit Pygame
 pygame.quit()
 
     
+# pygame.time.delay(10) 
+	
+	#for event in pygame.event.get(): 
+	#	if event.type == pygame.QUIT: 
+	#		running = False
+	#keys = pygame.key.get_pressed() 
+	
+	#if keys[pygame.K_LEFT] and car_x>0: 
+	#	car_x -= vel 
+		
+	#if keys[pygame.K_RIGHT] and car_x<1500-width: 
+	#	car_x += vel 
+		
+	#if keys[pygame.K_UP] and car_y>0: 
+	#	car_y -= vel 
+		
+	#if keys[pygame.K_DOWN] and car_y<750-height: 
+	#	car_y += vel 
+	#window.blit(f1_car,(car_x, car_y))
+	#pygame.display.flip()
